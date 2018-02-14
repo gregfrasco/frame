@@ -2,7 +2,7 @@
 const Confidence = require('confidence');
 const Config = require('./config');
 const Path = require('path');
-
+const Package = require('./package.json');
 
 const criteria = {
     env: process.env.NODE_ENV
@@ -57,6 +57,23 @@ const manifest = {
             },
             {
                 plugin: 'hapi-remote-address'
+            },
+            {
+                plugin: 'inert'
+            },
+            {
+                plugin: 'vision'
+            },
+            {
+                plugin:'hapi-swagger',
+                options: {
+                    info: {
+                        title: 'Frame API Documentation',
+                        version: Package.version
+                    },
+                    grouping: 'tags',
+                    sortTags: 'name'
+                }
             },
             {
                 plugin: 'hapi-mongo-models',
