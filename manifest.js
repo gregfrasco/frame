@@ -1,8 +1,8 @@
 'use strict';
 const Confidence = require('confidence');
 const Config = require('./config');
-const Path = require('path');
 const Package = require('./package.json');
+const Path = require('path');
 
 const criteria = {
     env: process.env.NODE_ENV
